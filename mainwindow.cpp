@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -36,6 +37,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->bTerminate,SIGNAL(clicked(bool)),this,SLOT(bTERMINATEPressed()));
     connect(ui->bFinalizarSesion,SIGNAL(clicked(bool)),this,SLOT(bFinalizarSesionPressed()));
     env = QProcessEnvironment::systemEnvironment();
+    //connect(ui->actionSource_config_file,SIGNAL(triggered()),this,SLOT(menuSourceConfigFilePressed()));
     inicializarBotones();
 
 }
@@ -48,11 +50,31 @@ MainWindow::~MainWindow()
 
 void MainWindow::configurarVentana(){
 
-    this->setWindowTitle("Facultad de Ingenieria - Universidad Nacional de Asuncion");
+    this->setWindowTitle("ARTDAQ RUN CONTROL");
     this->setFixedSize(this->geometry().width(),this->geometry().height());
     ui->taDAQInterface->setReadOnly(true);
 
 }
+
+/*void MainWindow::menuSourceConfigFilePressed(){
+    qDebug()<<"menuSourceConfigFilePressed";
+    QString home_str = env.value("HOME","DEFAULT");
+    QString fileName = QFileDialog::getOpenFileName(this,tr("Source configuration file"), home_str, tr("Source Files (*.sh)"));
+    QProcess source;
+    char x = '"';
+    QString source_str = tr("\"source");
+    QString quote = QString(x);
+    fileName = quote + "source " + fileName + quote;
+    qDebug()<<fileName;
+    source.start("bash", QStringList()<<"-c"<<fileName);
+    source.waitForFinished();
+    QByteArray daq_byte_array = source.readAllStandardOutput();
+    //if(daq_byte_array == ""){return;}
+    QTextCodec* codec;
+    daq_string = codec->codecForMib(106)->toUnicode(daq_byte_array);
+    ui->taDAQInterface->document()->setPlainText(daq_string);
+
+}*/
 
 void MainWindow::bFinalizarSesionPressed(){
 

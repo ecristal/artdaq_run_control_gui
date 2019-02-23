@@ -14,19 +14,6 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QLabel" name="lbTitulo">
-    <property name="geometry">
-     <rect>
-      <x>290</x>
-      <y>10</y>
-      <width>451</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>CONSOLA ARTDAQ DEL LABORATORIO DE MECANICA Y ENERGIA</string>
-    </property>
-   </widget>
    <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
@@ -37,7 +24,7 @@
      </rect>
     </property>
     <property name="title">
-     <string>DAQ Interface</string>
+     <string>DAQInterface</string>
     </property>
     <widget class="QPlainTextEdit" name="taDAQInterface">
      <property name="geometry">
@@ -59,7 +46,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>Iniciar DAQInterface</string>
+      <string>Start DAQInterface</string>
      </property>
     </widget>
     <widget class="QPushButton" name="bBelen">
@@ -85,7 +72,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>Consola del DAQInterface</string>
+      <string>Messages</string>
      </property>
     </widget>
     <widget class="QPushButton" name="bFinalizarSesion">
@@ -98,7 +85,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>Finalizar Sesion</string>
+      <string>End Session</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_6">
@@ -111,13 +98,13 @@
       </rect>
      </property>
      <property name="text">
-      <string>Estatus:</string>
+      <string>status:</string>
      </property>
     </widget>
     <widget class="QLabel" name="lbStatus">
      <property name="geometry">
       <rect>
-       <x>80</x>
+       <x>70</x>
        <y>340</y>
        <width>171</width>
        <height>20</height>
@@ -138,7 +125,7 @@
      </rect>
     </property>
     <property name="title">
-     <string>Comandos DAQ </string>
+     <string>DAQInterface Commands</string>
     </property>
     <widget class="QPushButton" name="bDAQcomp">
      <property name="geometry">
@@ -150,7 +137,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>Cargar Componentes</string>
+      <string>Load Components</string>
      </property>
     </widget>
     <widget class="QListView" name="lvComponentes">
@@ -183,7 +170,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>Componentes</string>
+      <string>Components</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_3">
@@ -196,7 +183,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>Configuraciones</string>
+      <string>Configurations</string>
      </property>
     </widget>
     <widget class="QPushButton" name="bDAQconf">
@@ -209,7 +196,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>Cargar Configuraciones</string>
+      <string>Load Configurations</string>
      </property>
     </widget>
     <widget class="QListView" name="lvConfigBOOT">
@@ -227,12 +214,12 @@
       <rect>
        <x>330</x>
        <y>30</y>
-       <width>111</width>
+       <width>141</width>
        <height>20</height>
       </rect>
      </property>
      <property name="text">
-      <string>Config BOOT</string>
+      <string>BOOT Configurations</string>
      </property>
     </widget>
     <widget class="QPushButton" name="bBOOT">
@@ -245,7 +232,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>INICIALIZAR</string>
+      <string>BOOT</string>
      </property>
     </widget>
     <widget class="QPushButton" name="bCONFIG">
@@ -258,7 +245,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>CONFIGURAR</string>
+      <string>CONFIGURATE</string>
      </property>
     </widget>
     <widget class="QPushButton" name="bBOOTandCONFIG">
@@ -271,7 +258,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>INIC y CONFIG</string>
+      <string>BOOT &amp; CONFIG</string>
      </property>
     </widget>
     <widget class="QGroupBox" name="groupBox_3">
@@ -284,7 +271,7 @@
       </rect>
      </property>
      <property name="title">
-      <string>Comandos de transicion</string>
+      <string>Transition Commands</string>
      </property>
      <widget class="QPushButton" name="bStart">
       <property name="geometry">
@@ -296,7 +283,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>INICIAR</string>
+       <string>START</string>
       </property>
      </widget>
      <widget class="QPushButton" name="bStop">
@@ -309,7 +296,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>PARAR</string>
+       <string>STOP</string>
       </property>
      </widget>
      <widget class="QPushButton" name="bPause">
@@ -322,7 +309,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>PAUSAR</string>
+       <string>PAUSE</string>
       </property>
      </widget>
      <widget class="QPushButton" name="bTerminate">
@@ -335,21 +322,11 @@
        </rect>
       </property>
       <property name="text">
-       <string>TERMINAR</string>
+       <string>TERMINATE</string>
       </property>
      </widget>
     </widget>
    </widget>
-  </widget>
-  <widget class="QMenuBar" name="menuBar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>1086</width>
-     <height>25</height>
-    </rect>
-   </property>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -360,6 +337,11 @@
    </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionSource_config_file">
+   <property name="text">
+    <string>Source config file</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>
