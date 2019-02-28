@@ -1,15 +1,18 @@
 artdaq_run_control_gui
 
-Installation proccess:
-- on sbnd-daq00:
-	source /grid/fermiapp/products/artdaq/setup  
-- 	qmake -o Makefile ARTDAQ_console.pro 
-- 	make
+run the GUI:
+#DAQInterface must be configured(all artdaq environment variables setuped and source_me sourced)
+./ARTDAQ_console
 
-add these lines to daqinterface.py located at your local intallation of 
+build from source code proccess:  
+-qmake -o Makefile ARTDAQ_console.pro 
+-make
+
+IMPORTANT:
+add these lines to daqinterface.py located at your local installation of 
 artdaq-daqinterface ($ARTDAQ_DAQINTERFACE_DIR/rc/control/daqinterface.py):
 
-after "import os":
+#after "import os":
 
 class Unbuffered(object):
    def __init__(self, stream):
@@ -23,7 +26,7 @@ class Unbuffered(object):
    def __getattr__(self, attr):
        return getattr(self.stream, attr)
 
-after "import sys":
+#after "import sys":
 
 sys.path.append( os.getcwd() )
 sys.stdout = Unbuffered(sys.stdout)
